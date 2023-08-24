@@ -1,0 +1,21 @@
+{
+  "name": "cloudflarednsupdater",
+  "version": "1.0.0",
+  "description": "This is a simple script to update a Cloudflare DNS record with your current public IP address.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "cloudflare", "dns","ip","updater","records"
+  ],
+  "author": "Ramazan Sancar (@ramazansancar)",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "http": "^0.0.1-security",
+    "node-cron": "^3.0.2"
+  }
+}
