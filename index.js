@@ -38,8 +38,7 @@ var job = cron.schedule('*/15 * * * *', async () => {
         baseURL: 'https://api.cloudflare.com/client/v4/',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${process.env.CLOUDFLARE_TOKEN}`,
-            'X-Forwarded-For': '*'
+            'Authorization': `Bearer ${process.env.CLOUDFLARE_TOKEN}`
         },
         transformRequest: [
           (data) => {
