@@ -29,8 +29,8 @@ const nowTime = (i = 1) => {
 // 15 Minutes
 var job = cron.schedule('*/15 * * * *', async () => {
     console.log(`[${nowTime(1)}]`,'Checking DNS Records');
-    const agent = new http.Agent({ keepAlive: true }); // Ipv4 Support
-    let ipAdressApi = await axios.get('https://api.cloudflare.com/cdn-cgi/trace', { httpAgent: agent });
+    const agent = new http.Agent({ keepAlive: true, family: 4 }); // Ipv4 Support
+    let ipAdressApi = await axios.get('http://api.cloudflare.com/cdn-cgi/trace', { httpsAgent: agent, httpAgent: agent });
     ipAdressApi = ipAdressApi.data.split('\n').filter((item) => item.includes('ip'))[0].split('=')[1];
     console.log(`[${nowTime(1)}]`,'My Ip Adress:',ipAdressApi);
 
